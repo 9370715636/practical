@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors Example</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to the external CSS file -->
+    <style>
+        /* Element Selector */
+        h1 {
+            color: darkblue;
+            text-align: center;
+        }
+
+        /* Class Selector */
+        .highlight {
+            background-color: yellow;
+            font-weight: bold;
+        }
+
+        /* ID Selector */
+        #unique {
+            color: red;
+            font-size: 20px;
+        }
+
+        /* Attribute Selector */
+        a[target="_blank"] {
+            color: green;
+            text-decoration: underline;
+        }
+
+        /* Pseudo-class Selector */
+        p:hover {
+            color: purple;
+            font-style: italic;
+        }
+
+        /* Universal Selector */
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Child Selector */
+        div > p {
+            color: blue;
+        }
+
+        /* Descendant Selector */
+        div p {
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>CSS Selectors Example</h1>
+
+    <div id="unique">This is a unique ID selector example.</div>
+
+    <p class="highlight">This paragraph is highlighted using a class selector.</p>
+
+    <p>This is a normal paragraph. Hover over this text to see the pseudo-class effect.</p>
+
+    <div>
+        <p>This is a child paragraph inside a div.</p>
+        <p>This is another child paragraph inside the same div.</p>
+    </div>
+
+    <p>Visit <a href="https://www.example.com" target="_blank">Example.com</a> to see the attribute selector in action.</p>
+
+</body>
+</html>

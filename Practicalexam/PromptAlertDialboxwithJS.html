@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dialog Boxes Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: darkblue;
+        }
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Dialog Boxes</h1>
+    <button onclick="showDialog()">Click Me!</button>
+
+    <script>
+        function showDialog() {
+            // Prompt dialog to get the user's name
+            var name = prompt("Please enter your name:");
+
+            // Check if the user entered a name
+            if (name) {
+                // Confirm dialog to ask if the user wants to proceed
+                var proceed = confirm("Do you want to proceed, " + name + "?");
+
+                // If the user confirms, show an alert with a greeting
+                if (proceed) {
+                    alert("Hello, " + name + "! Welcome to the JavaScript dialog box demo.");
+                } else {
+                    alert("Okay, maybe next time!");
+                }
+            } else {
+                alert("You didn't enter a name!");
+            }
+        }
+    </script>
+
+</body>
+</html>

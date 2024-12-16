@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <title>Current Date and Time</title>
+	<script>
+function getCurrentDateTime() {
+    const currentDate = new Date();
+    const day = currentDate.getDate();
+    const month = currentDate.toLocaleString('default', { month: 'long' });
+    const year = currentDate.getFullYear();
+    const hours = currentDate.getHours();
+    const minutes = currentDate.getMinutes();
+    const seconds = currentDate.getSeconds();
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+
+    const formattedDate = `Today's Date: ${day} ${month} ${year}, Time: ${hours % 12 || 12}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')} ${ampm}`;
+
+    return formattedDate;
+}
+
+function displayCurrentDateTime() {
+    const currentDateTime = getCurrentDateTime();
+    console.log(currentDateTime);
+    document.getElementById('current-date-time').innerHTML = currentDateTime;
+}
+
+setInterval(displayCurrentDateTime, 1000);
+
+displayCurrentDateTime();
+</script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #current-date-time {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Current Date and Time</h1>
+    <p id="current-date-time"></p>
+
+</body>
+</html>

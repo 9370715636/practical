@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Selector</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .restaurant-list {
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Select Your Favorite Restaurants</h1>
+    <div class="restaurant-list">
+        
+		
+		<label><input type="checkbox" value="Pizza Place"> Pizza Place</label><br>
+        <label><input type="checkbox" value="Sushi Spot"> Sushi Spot</label><br>
+        <label><input type="checkbox" value="Burger Joint"> Burger Joint</label><br>
+        <label><input type="checkbox" value="Pasta House"> Pasta House</label><br>
+        <label><input type="checkbox" value="Taco Stand"> Taco Stand</label><br>
+    </div>
+    <button onclick="showSelectedRestaurants()">Show Selected Restaurants</button>
+
+    <h2 id="result"></h2>
+
+    <script>
+        function showSelectedRestaurants() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            const selectedRestaurants = [];
+
+            checkboxes.forEach((checkbox) => {
+                if (checkbox.checked) {
+                    selectedRestaurants.push(checkbox.value);
+                }
+            });
+
+            const resultElement = document.getElementById('result');
+            if (selectedRestaurants.length > 0) {
+                resultElement.textContent = "You selected: " + selectedRestaurants.join(', ');
+            } else {
+                resultElement.textContent = "No restaurants selected.";
+            }
+        }
+    </script>
+
+</body>
+</html>

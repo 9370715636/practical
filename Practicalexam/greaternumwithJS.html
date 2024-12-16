@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Greater Number</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            max-width: 300px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="button"] {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        input[type="button"]:hover {
+            background-color: #218838;
+        }
+        #result {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Find the Greater Number</h1>
+    <form id="numberForm">
+        <label for="num1">Enter First Number:</label>
+        <input type="number" id="num1" required>
+
+        <label for="num2">Enter Second Number:</label>
+        <input type="number" id="num2" required>
+
+        <input type="button" value="Find Greater" onclick="findGreater()">
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        function findGreater() {
+            // Get the values from the input fields
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+
+            // Determine the greater number
+            let greaterNumber;
+            if (num1 > num2) {
+                greaterNumber = num1;
+            } else if (num2 > num1) {
+                greaterNumber = num2;
+            } else {
+                greaterNumber = "Both numbers are equal.";
+            }
+
+            // Display the result
+            document.getElementById('result').innerText = "Greater Number: " + greaterNumber;
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+
+<html lang="en">
+<head>
+    <title>CSS Selectors Demo</title>
+    <style>
+        h1 {
+            color: blue; 
+            text-align: center; 
+        }
+
+        .highlight {
+            background-color: yellow; 
+            font-weight: bold;
+        }
+
+        #main-content {
+            border: 2px solid black; 
+            padding: 20px; 
+            margin: 20px; 
+            border-radius: 10px; 
+        }
+
+        #main-content p {
+            color: green; 
+        }
+    </style>
+</head>
+<body>
+
+    <h1>CSS Selectors Demo</h1>
+
+    <div id="main-content">
+        <p>This is a paragraph inside the main content area.</p>
+        <p class="highlight">This paragraph is highlighted and bold.</p>
+        <p>This is another paragraph inside the main content area.</p>
+    </div>
+
+    <p class="highlight">This is a highlighted paragraph outside the main content area.</p>
+
+</body>
+</html>

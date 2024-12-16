@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form Validation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        label {
+            font-size: 1.2em;
+        }
+        input {
+            padding: 8px;
+            margin: 10px 0;
+            font-size: 1em;
+        }
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <h2>Registration Form</h2>
+    <form id="registrationForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+        <div id="usernameError" class="error"></div>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+        <div id="emailError" class="error"></div>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <div id="passwordError" class="error"></div>
+
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone" name="phone">
+        <div id="phoneError" class="error"></div>
+
+        <button type="button" onclick="validateForm()">Submit</button>
+    </form>
+
+    <script>
+        function validateForm() {
+            document.getElementById('usernameError').innerText = "";
+            document.getElementById('emailError').innerText = "";
+            document.getElementById('passwordError').innerText = "";
+            document.getElementById('phoneError').innerText = "";
+
+            var username = document.getElementById('username').value;
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            var phone = document.getElementById('phone').value;
+
+            var isValid = true;
+
+            if (username === "") {
+                document.getElementById('usernameError').innerText = "Username cannot be blank.";
+                isValid = false;
+            }
+
+            if (password.length < 8) {
+                document.getElementById('passwordError').innerText = "Password must be at least 8 characters long.";
+                isValid = false;
+            }
+
+            if (email.indexOf('@') === -1) {
+                document.getElementById('emailError').innerText = "Please enter a valid email address.";
+                isValid = false;
+            }
+           
+            var phoneRegex = /^[0-9]+$/;
+            if (!phoneRegex.test(phone)) {
+                document.getElementById('phoneError').innerText = "Phone number should only contain numbers.";
+                isValid = false;
+            } 
+           
+            if (isValid) {
+                alert("Form submitted successfully!");
+            } else {
+                alert("Please fix the errors in the form.");
+            }
+        }
+    </script>
+</body>
+</html>

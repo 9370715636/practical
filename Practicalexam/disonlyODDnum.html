@@ -1,0 +1,75 @@
+<html lang="en">
+<head>
+    <title>Odd Number Filter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        input {
+            padding: 10px;
+            margin: 10px 0;
+            width: 200px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Input 5 Numbers</h1>
+<div id="inputFields">
+    <input type="number" id="number1" placeholder="Enter number 1" />
+    <input type="number" id="number2" placeholder="Enter number 2" />
+    <input type="number" id="number3" placeholder="Enter number 3" />
+    <input type="number" id="number4" placeholder="Enter number 4" />
+    <input type="number" id="number5" placeholder="Enter number 5" />
+</div>
+<button onclick="displayOddNumbers()">Display Odd Numbers</button>
+
+<div class="result" id="result"></div>
+
+<script>
+    function displayOddNumbers() {
+        // Create an array to hold the numbers
+        const numbers = [];
+        
+        // Get values from input fields and push them to the array
+        for (let i = 1; i <= 5; i++) {
+            const number = parseInt(document.getElementById(`number${i}`).value);
+            if (!isNaN(number)) { // Check if the input is a valid number
+                numbers.push(number);
+            }
+        }
+
+        // Filter out odd numbers
+        const oddNumbers = numbers.filter(num => num % 2 !== 0);
+
+        // Display the odd numbers
+        if (oddNumbers.length > 0) {
+            document.getElementById('result').innerText = `Odd Numbers: [${oddNumbers.join(', ')}]`;
+        } else {
+            document.getElementById('result').innerText = 'No odd numbers entered.';
+        }
+    }
+</script>
+
+</body>
+</html>

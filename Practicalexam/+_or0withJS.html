@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Sign Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input {
+            margin: 5px;
+        }
+        button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Check if a Number is Positive, Negative, or Zero</h1>
+    <label for="number">Enter a number:</label>
+    <input type="number" id="number" placeholder="Enter a number" required>
+    <br>
+    <button onclick="checkNumber()">Check Number</button>
+    
+    <h2 id="result"></h2>
+
+    <script>
+        function checkNumber() {
+            // Get the number from the input field
+            const number = parseFloat(document.getElementById('number').value);
+            
+            // Check if the input is a valid number
+            if (isNaN(number)) {
+                document.getElementById('result').innerText = "Please enter a valid number.";
+                return;
+            }
+
+            // Determine if the number is positive, negative, or zero
+            let result;
+            if (number > 0) {
+                result = "The number is positive.";
+            } else if (number < 0) {
+                result = "The number is negative.";
+            } else {
+                result = "The number is zero.";
+            }
+
+            // Display the result
+            document.getElementById('result').innerText = result;
+        }
+    </script>
+
+</body>
+</html>

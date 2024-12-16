@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sort Numbers in Descending Order</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input {
+            margin: 5px;
+        }
+        button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Sort Numbers in Descending Order</h1>
+    <label for="num1">Enter number 1:</label>
+    <input type="number" id="num1" required>
+    <br>
+    <label for="num2">Enter number 2:</label>
+    <input type="number" id="num2" required>
+    <br>
+    <label for="num3">Enter number 3:</label>
+    <input type="number" id="num3" required>
+    <br>
+    <label for="num4">Enter number 4:</label>
+    <input type="number" id="num4" required>
+    <br>
+    <label for="num5">Enter number 5:</label>
+    <input type="number" id="num5" required>
+    <br>
+    <button onclick="sortNumbers()">Sort Numbers</button>
+
+    <h2>Sorted Numbers (Descending Order):</h2>
+    <p id="result"></p>
+
+    <script>
+        function sortNumbers() {
+            // Create an array to hold the numbers
+            const numbers = [
+                parseFloat(document.getElementById('num1').value),
+                parseFloat(document.getElementById('num2').value),
+                parseFloat(document.getElementById('num3').value),
+                parseFloat(document.getElementById('num4').value),
+                parseFloat(document.getElementById('num5').value)
+            ];
+
+            // Sort the array in descending order
+            numbers.sort((a, b) => b - a);
+
+            // Display the sorted numbers
+            document.getElementById('result').innerText = numbers.join(', ');
+        }
+    </script>
+
+</body>
+</html>

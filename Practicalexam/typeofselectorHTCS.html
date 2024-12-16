@@ -1,0 +1,92 @@
+<html lang="en">
+<head>
+    <title>CSS Selectors Demo</title>
+	<style>
+	    body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+h2 {
+    color: #555;
+}
+
+p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+/* 1. Element Selector */
+p {
+    color: #333; /* Applies to all <p> elements */
+}
+
+/* 2. Class Selector */
+.highlight {
+    background-color: yellow; /* Applies to elements with class "highlight" */
+}
+
+/* 3. ID Selector */
+#unique {
+    color: white; /* Applies to the element with ID "unique" */
+    background-color: #007BFF; /* Blue background */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* 4. Attribute Selector */
+a.link {
+    color: #FF5733; /* Applies to <a> elements with class "link" */
+    text-decoration: none;
+}
+
+/* 5. Descendant Selector */
+.container p {
+    color: #28A745; /* Applies to <p> elements inside elements with class "container" */
+}
+
+/* 6. Pseudo-Class Selector */
+.button {
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background-color: #0056b3; /* Changes background color on hover */
+}
+</style>
+</head>
+<body>
+
+<h1>CSS Selectors Demonstration</h1>
+
+<h2>1. Element Selector</h2>
+<p>This paragraph is styled using an element selector.</p>
+
+<h2>2. Class Selector</h2>
+<p class="highlight">This paragraph is styled using a class selector.</p>
+
+<h2>3. ID Selector</h2>
+<p id="unique">This paragraph is styled using an ID selector.</p>
+
+<h2>4. Attribute Selector</h2>
+<a href="#" class="link">This link is styled using an attribute selector.</a>
+
+<h2>5. Descendant Selector</h2>
+<div class="container">
+    <p>This paragraph is inside a container and styled using a descendant selector.</p>
+</div>
+
+<h2>6. Pseudo-Class Selector</h2>
+<a href="#" class="button">Hover over me!</a>
+
+</body>
+</html>
